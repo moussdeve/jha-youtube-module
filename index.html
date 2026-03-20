@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Search Module</title>
+    
+    <!-- Security headers (for production) -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src https://i.ytimg.com; connect-src https://www.googleapis.com;"> -->
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' http://localhost:3000 https://www.googleapis.com https://cdn.jsdelivr.net;">
+    
+    <!-- Preconnect to YouTube API for performance -->
+    <link rel="preconnect" href="https://www.googleapis.com">
+    <link rel="preconnect" href="https://i.ytimg.com">
+    <link rel="stylesheet" href="index.css">
+
+    <script type="module" src="./dist/app.js"></script>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "lit": "https://esm.run/lit",
+            "lit/": "https://esm.run/lit/",
+            "@lit/context": "https://esm.run/@lit/context"
+        }
+    }
+    </script>
+
+    
+</head>`
+
+<body>
+
+    <div id="app">
+        <div class="app-loading">Loading YouTube Search...</div>
+        <youtube-search-app></youtube-search-app>
+    </div>
+    
+    
+</body>
+</html>
