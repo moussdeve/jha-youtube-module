@@ -63,7 +63,9 @@ export class StorageService extends EventTarget {
 
     // Remove a bookmark by video ID
     removeBookmark(videoId: string) {
-        this.bookmarks = this.bookmarks.filter(b => b.id === videoId);
+        console.log("Removing bookmark with ID:", videoId);
+        this.bookmarks = this.bookmarks.filter(b => b.id !== videoId);
+        console.log("Bookmark removed, current bookmarks:", this.bookmarks);
         this.saveBookmarks();
     }
 
